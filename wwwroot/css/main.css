@@ -1,5 +1,4 @@
-
-        :root {
+:root {
   --base-color: #f0efe9;
   --primary-color: #f9d783;
   --secondary-color: #f94d1c;
@@ -35,6 +34,8 @@
   font-weight: 600;
   content: "\f061";
   padding-left: 0.5rem;
+  display: inline-block;
+  transform: rotate(-45deg);
 }
 
 /* Josh's Custom CSS Reset 
@@ -159,7 +160,7 @@ main {
 .section-content .hero-text p {
   font-size: var(--font-size-md);
   font-weight: 400;
-  padding-bottom:1.5rem;
+  padding-bottom: 1.5rem;
 }
 .section-content .hero-text a {
   border-radius: 40px;
@@ -176,7 +177,7 @@ main {
   justify-content: center;
 }
 
-.partners-section  {
+.partners-section {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -223,24 +224,26 @@ main {
   font-size: var(--font-size-headings);
   font-weight: 700;
 }
-.features-info button {
+.features-info a {
+    text-align: center;
   border-radius: 40px;
   padding: 1rem 3rem;
   background-color: var(--primary-color);
 }
 
-.box-features {
+.box-features .umb-block-list {
   display: grid;
+  width: 100%;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
 }
-.box-features > div {
+.box-features .umb-block-list > div {
   display: flex;
   flex-direction: column;
   gap: 2rem;
   padding: 3rem 0rem;
 }
-.box-features > div img {
+.box-features .umb-block-list > div img {
   width: 50px;
 }
 
@@ -354,30 +357,30 @@ main {
   max-width: 500px;
 }
 
-.service-items ul {
+.service-items .umb-block-list {
   display: flex;
   gap: 2rem;
 }
-.service-items ul li {
+.service-items .umb-block-list a {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   gap: 2rem;
-  padding: 2rem;
+  padding: 4rem 2rem 2rem 2rem;
   background-color: white;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
-.service-items ul li h4 {
+.service-items .umb-block-list a h4 {
   font-size: var(--font-size-lg);
   font-weight: 700;
   color: var(--secondary-color);
 }
-.service-items ul li p {
+.service-items .umb-block-list a p {
   font-size: var(--font-size-md);
   font-weight: 400;
 }
-.service-items ul li button {
+.service-items .umb-block-list a button {
   width: 100%;
   display: flex;
   font-size: 3rem;
@@ -803,7 +806,7 @@ main {
   justify-content: center;
   gap: 0.5rem;
 }
-.news-pagnation span {
+.news-pagnation a {
   display: flex;
   justify-content: center;
   width: 38px;
@@ -811,12 +814,6 @@ main {
   padding: 0.5rem 0.5rem;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 5px;
-}
-.news-pagnation span:first-child i {
-  transform: rotate(270deg);
-}
-.news-pagnation :last-child i {
-  transform: rotate(90deg);
 }
 .news-pagnation .active-page {
   background-color: var(--dark-color);
@@ -911,7 +908,7 @@ main {
   gap: 1rem;
   padding-bottom: 5rem;
 }
-.details-group-btn button {
+.details-group-btn span {
   background: rgba(25, 25, 25, 0.05);
   padding: 0.5rem 1.5rem;
   border-radius: 40px;
@@ -1049,6 +1046,12 @@ main {
 .contact-input > * {
   display: flex;
   flex-direction: column;
+  width: 40rem;
+    max-width:40rem;
+    min-width:40rem;
+    height:20;
+    max-height:20rem;
+    min-height:3.5rem;
   padding: 1rem;
   border-radius: 40px;
   border: none;

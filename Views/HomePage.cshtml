@@ -5,4 +5,11 @@
 	Layout = "LayoutWithShowcase.cshtml";
 }
 
+
 @await Html.PartialAsync("_PartnerSection")
+
+@await Html.PartialAsync("_ServiceFeaturesSection", Model)
+
+@await Html.PartialAsync("_AboutCompanySection")
+
+@await Html.PartialAsync("_OurServicesSection", Model)

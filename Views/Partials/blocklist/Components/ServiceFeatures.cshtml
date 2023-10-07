@@ -1,0 +1,21 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Models
+
+@{
+    var content = (ContentModels.ServiceFeatures)Model.Content;
+}
+
+
+ <div>
+
+ @{
+            var serviceFeatureImage = content.Value<MediaWithCrops>("serviceFeatureImage");
+            if (serviceFeatureImage != null)
+            {
+                <img src="@serviceFeatureImage.MediaUrl()" />
+            }
+            }
+  <h3>@content.Value("serviceFeatureTitle")</h3>
+  <p>@content.Value("serviceFeatureDescription")</p>
+</div>

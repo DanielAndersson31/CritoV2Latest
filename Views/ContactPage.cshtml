@@ -1,0 +1,78 @@
+﻿@using CritoV2.Models;
+@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ContactPage>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    Layout = "LayoutWithBreadcrumb.cshtml";
+
+    var contactForm = new ContactForm();
+}
+
+ <section class="align-items-center">
+        <div class="container">
+          <div class="contact-options">
+            <div class="contact-content">
+              <i class="fa-solid fa-location-dot"></i>
+              <div>
+                <h4>Visit Us</h4>
+                <p>Sveavägen 31</p>
+                <p>111 34, Stockholm</p>
+              </div>
+            </div>
+            <div class="contact-content">
+              <i class="fa-solid fa-phone"></i>
+              <div>
+                <h4>Call Us</h4>
+                <p>+46 (8) 121 470 50</p>
+                <p>+46 (8) 121 470 51</p>
+              </div>
+            </div>
+            <div class="contact-content">
+              <i class="fa-solid fa-envelope"></i>
+              <div>
+                <h4>Email Us</h4>
+                <p>info@crito.com</p>
+                <p>support@crito.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+        <section class="contact-form align-items-center">
+        <div class="section-contact-form container">
+          <div class="contact-form-container">
+            <h2>Leave us a message</h2>
+
+            @using (Html.BeginUmbracoForm("Index", "Contacts", FormMethod.Post))
+            {
+
+            <div asp-validation-summary="All"></div>
+
+            <div class="contact-input" >
+              <input asp-for="@contactForm.Name" type="text" placeholder="Name*" />
+              <input asp-for="@contactForm.Email" type="email" placeholder="Email*" />
+              <textarea asp-for="@contactForm.Message" placeholder="Your Message*" rows="6"></textarea>
+
+              <button class="arrowhead" type="submit">Send Message</button>
+            </div>
+            }
+            
+          </div>
+        </div>
+      </section>
+      
+       <section class="map-container">
+        <div style="width: 100%">
+          <iframe
+            width="100%"
+            height="600"
+            frameborder="0"
+            scrolling="no"
+            marginheight="0"
+            marginwidth="0"
+            src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Sveav%C3%A4gen%2031,111%2034%20Stockholm+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+            ><a href="https://www.maps.ie/population/">Calculate population in area</a></iframe
+          >
+        </div>
+      </section>
